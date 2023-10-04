@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+p {
+  color: #333
+}
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  --angle: 0deg;
+  gap: 1rem;
+  border: 6px solid #222;
+  border-image-slice: 1;
+  max-width: 500px;
+  display: flex;
+  animation: 5s rotate linear infinite;
+  flex-direction: column;
+  align-items: flex-start;
+  border-image: linear-gradient(var(--angle), #743ad5, #ef119e, #28ddd4, #fbb400) 1;
+  padding: 1.5rem;
+  box-shadow: 1rem 1rem 0 #222;
+}
+.image {
+  width: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.image > img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+.btn {
+  padding: .5rem 2rem;
+  border-radius: 999px;
+  font-family: inherit;
+  outline-color: transparent;
+  border-color: transparent;
+  background-color: #222;
+  color: #fff !important;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn a {
+  all: unset
+}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
